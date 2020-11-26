@@ -1,0 +1,7 @@
+ applications:
+ - name: python-app
+   memory: 256M
+   random-route: true 
+   command: gunicorn -w 10 app:app
+   services:
+     - demo

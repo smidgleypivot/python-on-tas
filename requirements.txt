@@ -1,0 +1,9 @@
+flask
+
+requests
+gunicorn
+cfenv
+python-dotenv
+mysqlclient
+SQLAlchemy
+
