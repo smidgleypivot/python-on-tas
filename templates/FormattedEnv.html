@@ -13,6 +13,8 @@
     {% endif %}
 
     <h2>Environment Variables</h2>
+    <table>
+        
     <tr>
         <th>Key</th>
         <th>Value</th>
@@ -20,15 +22,12 @@
 
 
     {% for key, value in environ.items() %}
-
         <tr>
         <td>{{ key }}</td>
         <td>{{ value }}</td>
 
         </tr>
     {% endfor %}
-
-
 
     </table>
 
