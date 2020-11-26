@@ -1,0 +1,25 @@
+
+
+        {% extends "layout.html" %}
+        {% block content %}
+        <h3>Tables</h3>
+        {% for table in schema %}
+            <h4>{{ table.TableName }}</h4>
+        {% for col in table.Columns %}
+            {{ col['name'] }}
+        {% endfor %}
+
+
+        {% endfor %}
+
+        {% endblock %}
+
+
+
+
+
+
+
+
+
+

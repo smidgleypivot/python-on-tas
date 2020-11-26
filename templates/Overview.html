@@ -1,0 +1,14 @@
+
+
+        {% extends "layout.html" %}
+            <h1>Hello world from Python</h1>
+
+            {% if local %}
+                <h3>Running locally</h3>
+            {% else %}
+                <h4>Running on TAS</h4>
+            {% endif %}
+        {% endblock %}
+
+
+

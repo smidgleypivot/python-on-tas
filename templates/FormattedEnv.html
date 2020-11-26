@@ -1,0 +1,36 @@
+   {% extends "layout.html" %}
+        {% block content %}
+    <h2>Connected Systems</h2>
+
+    {% if environ['VCAP_SERVICES'] %}
+
+
+
+    {% else %}
+
+        <h3>No connected services found!</h3>
+
+    {% endif %}
+
+    <h2>Environment Variables</h2>
+    <tr>
+        <th>Key</th>
+        <th>Value</th>
+    </tr>
+
+
+    {% for key, value in environ.items() %}
+
+        <tr>
+        <td>{{ key }}</td>
+        <td>{{ value }}</td>
+
+        </tr>
+    {% endfor %}
+
+
+
+    </table>
+
+  {% endblock %}
+
