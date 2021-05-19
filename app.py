@@ -23,14 +23,16 @@ except:
     "Error loading VCAP services environment varable - have you set the correct .env files?"
 
 database = None
-for key,service in services.items():
-    for item in service:
-        if 'tags' in item.keys():
-            if 'mysql' in item.get('tags'):
-                database = item.get('credentials')
-                print("Found database")
-                break
-
+try:
+    for key,service in services.items():
+        for item in service:
+         if 'tags' in item.keys():
+                if 'mysql' in item.get('tags'):
+                    database = item.get('credentials')
+                    print("Found database")
+                    break
+except:
+    pass
 if database!=None:
     engine = create_engine(database.get('uri').split("?")[0],echo=True)
     schema = []
